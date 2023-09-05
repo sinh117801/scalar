@@ -1,0 +1,45 @@
+{
+  "name": "@scalar/cli",
+  "version": "0.1.0",
+  "author": "Scalar",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "nodemon --exec \"vite-node src/index.ts swagger.json\" --ext ts --quiet",
+    "preview": "http-server",
+    "build::disabled": "vite build && pnpm types:build && tsc-alias -p tsconfig.build.json",
+    "lint:check": "eslint .",
+    "lint:fix": "eslint .  --fix",
+    "test": "vitest",
+    "types:build": "tsc -p tsconfig.build.json",
+    "types:check": "tsc --noEmit --skipLibCheck"
+  },
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@scalar/api-reference": "workspace:*",
+    "vue": "3.3.4",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "nodemon": "^3.0.1",
+    "tsc-alias": "1.8.6",
+    "typescript": "^5.2.2",
+    "vite": "4.4.8",
+    "vite-node": "^0.34.3",
+    "vitest": "0.34.1"
+  }
+}
