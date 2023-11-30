@@ -15,3 +15,6 @@ cdn
 
 fixtures
 .vite-ssg-temp
+
+examples/react/src/App.tsx
+examples/react/src/main.tsx

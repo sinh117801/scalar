@@ -13,6 +13,7 @@ pnpm concurrently \
             --filter @scalar-examples/hono-api-reference \
             --filter @scalar-examples/express-api-reference \
             --filter @scalar-examples/backend \
+            --filter @scalar-examples/nest \
             dev \
     " \
     " \
