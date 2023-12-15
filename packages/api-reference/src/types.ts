@@ -235,7 +235,7 @@ export type Server = {
   variables?: ServerVariables
 }
 
-type SecurityScheme =
+export type SecurityScheme =
   | Record<string, never> // Empty objects
   | OpenAPIV2.SecuritySchemeObject
   | OpenAPIV3.SecuritySchemeObject
